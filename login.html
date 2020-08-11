@@ -34,17 +34,52 @@
       padding: 15px;
       margin: auto;
     }
+
+    .box{
+	    background-color:#ffffff;
+      max-width: 500px;
+      padding: 3em;
+      margin: auto;
+    }
+
+    input{
+      display:block;
+      width:100%;
+      padding:8px;
+      margin: .2em 0 .6em;
+      font-size:11px;
+    }
+
+    button{
+      background: #ca1400;
+      border:none;
+      margin:1em 0;
+      color:white;
+      padding: 1em;
+      width: 100%;
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    #img{
+      width: 100%;
+    }
+
   </style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+<body background="fondo login.jpg">
+  <div class="box">
+  <form>
+    <img id="img" src="img/login.png">
+    <label>Usuario:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Usuario"> <!-- El placeholder se va cuando empiezo a escribir -->
+
+    <label>Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su Contraseña">
+	
+    <button type="button" id="button" onclick="location.href='index.html'">Ingresar</button>
+  </form>
   </div>
 
   <script src="js/init.js"></script>
