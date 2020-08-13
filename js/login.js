@@ -19,6 +19,7 @@ function datos(){
     }
 }
 
+// Guardo el usuario y contraseña del login
 sessionStorage.setItem("usuario", document.getElementById("user").value);
 sessionStorage.setItem("contraseña", document.getElementById("pass").value);
 
@@ -30,15 +31,6 @@ function validar(){
         return location.href="index.html";
     }
 }
-
-
-  
-
-//document.addEventListener('DOMContentLoaded', () => {
-//    if (sessionStorage.getItem('usuario') && sessionStorage.getItem('contraseña') && window.location.href == 'login.html') {
-//      window.location('index.html');
-//    }
-//  })
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

@@ -40,16 +40,10 @@ var getJSONData = function(url){
     });
 }
 
+// Si usuario y contraseña no tienen valor y estoy en index.html, me redireccione a login.html 
 if (sessionStorage.getItem('usuario') == null && sessionStorage.getItem('contraseña') == null && window.location.href == 'https://nahueltome.github.io/Mi-primer-repositorio/index.html') {
   window.location.replace('login.html');
 }
-
-
-//document.addEventListener('DOMContentLoaded', () => {
-//  if (!sessionStorage.getItem('usuario') && !sessionStorage.getItem('contraseña') && window.location.href != 'login.html') {
-//    window.location('login.html');
-//  }
-//})
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
