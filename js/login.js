@@ -19,8 +19,8 @@ function datos(){
     }
 }
 
-var user = sessionStorage.setItem("user", "user");
-var pass = sessionStorage.setItem("pass", "pass");
+sessionStorage.setItem("usuario", document.getElementById("user").value);
+sessionStorage.setItem("contraseña", document.getElementById("pass").value);
 
 function validar(){
     if (datos() == false){
@@ -32,6 +32,13 @@ function validar(){
 }
 
 
+  
+
+//document.addEventListener('DOMContentLoaded', () => {
+//    if (sessionStorage.getItem('usuario') && sessionStorage.getItem('contraseña') && window.location.href == 'login.html') {
+//      window.location('index.html');
+//    }
+//  })
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
