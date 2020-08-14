@@ -1,13 +1,17 @@
 function datos(){
     var i = document.getElementById("user").value;
     var contenido = "";
+
     if (i == "" || i == null){
         contenido += `
             <p>Debe ingresar un usuario</p>
         `
         document.getElementById("errorusuario").innerHTML = contenido;
         return false
-    }
+    } else {
+            document.getElementById("errorusuario").innerHTML = "";
+        }
+
     var j = document.getElementById("pass").value;
     var contenido1 = "";
     if (j == "" || j == null){
@@ -16,7 +20,7 @@ function datos(){
         `
         document.getElementById("errorcontraseña").innerHTML = contenido1;
         return false
-    }
+    } 
 }
 
 // Guardo el usuario y contraseña del login
