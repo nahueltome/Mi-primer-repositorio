@@ -15,9 +15,6 @@ var hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-if (sessionStorage.getItem('usuario') == null && sessionStorage.getItem('contraseña') == null && window.location.href != 'https://nahueltome.github.io/Mi-primer-repositorio/login.html') {
-  window.location.replace('login.html');
-} else {
 var getJSONData = function(url){
     var result = {};
     showSpinner();
@@ -42,12 +39,10 @@ var getJSONData = function(url){
         return result;
     });
 }
-}
+
 // Si usuario y contraseña están vacíos y estoy en index.html, me redireccione a login.html 
-function login(){
-  if (sessionStorage.getItem('usuario') == null && sessionStorage.getItem('contraseña') == null && window.location.href != 'https://nahueltome.github.io/Mi-primer-repositorio/login.html') {
-    window.location.replace('login.html');
-  }
+if (sessionStorage.getItem('usuario') == null && sessionStorage.getItem('contraseña') == null && window.location.href != 'https://nahueltome.github.io/Mi-primer-repositorio/login.html') {
+  window.location.replace('login.html');
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
