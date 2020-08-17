@@ -32,7 +32,7 @@ function validar(){
         return datos();
     }
     else {
-        return location.href="index.html";
+        return location.href="home.html";
     }
 }
 
