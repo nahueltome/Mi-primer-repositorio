@@ -24,8 +24,9 @@ function datos(){
 }
 
 // Guardo el usuario y contraseña del login
-sessionStorage.setItem("usuario", document.getElementById("user").value);
-sessionStorage.setItem("contraseña", document.getElementById("pass").value);
+
+
+
 
 function validar(){
     if (datos() == false){
@@ -36,6 +37,10 @@ function validar(){
     }
 }
 
+function voy(){
+    sessionStorage.setItem('user', document.getElementById("user").value);
+    sessionStorage.setItem('pass', document.getElementById("pass").value);
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

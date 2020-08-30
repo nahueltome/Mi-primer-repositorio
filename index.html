@@ -13,41 +13,48 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b66167b1af.js" crossorigin="anonymous"></script>
   <style>
+
     html, body{
       height: 100%;
     }
 
     body {
-      display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
       align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
+      color: white;
+      background: url(fondoLogin.jpg) no-repeat;
     }
 
     .box{
-	    background-color:#ffffff;
-      max-width: 500px;
-      padding: 3em;
+      width: 380px;
       margin: auto;
+      padding: 2em;
+      background-color: rgba(0, 0, 0, 0.5); /* transparente */
     }
 
-    input{
-      display:block;
-      width:100%;
-      padding:8px;
-      margin: .2em 0 .6em;
-      font-size:11px;
+    .textbox{
+      width: 100%;
+      overflow: hidden;
+      font-size: 20px;
+      padding: 8px 0;
+      margin: 8px 0;
+      border-bottom: 1px solid red;
+    }
+
+    .textbox i{
+      width: 26px;
+      float: left;
+      text-align: center;
+    }
+
+    .textbox input{
+      border: none;
+      outline: none;
+      background: none;
+      color: white;
     }
 
     button{
@@ -64,29 +71,31 @@
     #img{
       width: 100%;
     }
-
-    p{
-      color:red
-    }
     
   </style>
 </head>
 
-<body background="fondo login.jpg">
+<body>
   <div class="box">
   <form>
+    <h1>Login</h1>
     <img id="img" src="img/login.png">
-    <label>Usuario:</label>
-    <input type="text" name="user" id="user" placeholder="Ingrese su Usuario"> <!-- El placeholder se va cuando empiezo a escribir -->
+    <div class="textbox">
+      <i class="fas fa-user"></i>
+      <input type="text" name="user" id="user" placeholder="Usuario"> <!-- El placeholder se va cuando empiezo a escribir -->
+    </div>
+    
     <div id="errorusuario">
 
     </div>
-    <label>Contraseña:</label>
-    <input type="password" id="pass" name="pass" placeholder="Ingrese su Contraseña">
+    <div class="textbox">
+      <i class="fas fa-lock"></i>
+      <input type="password" id="pass" name="pass" placeholder="Contraseña">
+    </div>
     <div id="errorcontraseña">
 
     </div>
-    <button type="button" id="button" onclick="validar()">Ingresar</button>
+    <button type="button" id="button" onclick="validar(); voy()">Ingresar</button>
   </form>
   </div>
 
