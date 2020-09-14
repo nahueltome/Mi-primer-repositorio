@@ -26,14 +26,77 @@
       <p id="eluser" style="color: rgb(253, 112, 112); font-size: medium;">Hola </p>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main>
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Info del auto</h2>
+        <p class="lead">Encontrarás aquí toda la información del auto seleccionado.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          <p id="pCost"></p>
+        </dd>
+
+        <dt>Vendidos</dt>
+        <dd>
+          <p id="pSoldCount"></p>
+        </dd>
+
+        <dt>Imágenes</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Productos relacionados</dt>
+        <dd>
+          <div id="relatedP">
+          </div>
+        </dd>
+      </dl>
     </div>
-  </div>
+    <h2 class="container mt-5">Comentarios:</h2>
+    <div id="comments" class="container mt-5">
+    </div>
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-4">
+          <form action="">
+            <div class="form-group">
+              <label for="comment">Comentario:</label>
+              <textarea id="comment" placeholder="Escribe un comentario" class="form-control"></textarea>
+              <div class="alert-danger col p-1" role="alert" id="error-textarea" style="display: none;">El comentario está vacío.</div>
+            </div>
+            <div class="form-group">
+              <label>Puntuación:</label>
+              <div class="ratings">
+                <span class="pintar fa fa-star" onclick="pintarEstrellas(1)"></span>
+                <span class="pintar fa fa-star" onclick="pintarEstrellas(2)"></span>
+                <span class="pintar fa fa-star" onclick="pintarEstrellas(3)"></span>
+                <span class="pintar fa fa-star" onclick="pintarEstrellas(4)"></span>
+                <span class="pintar fa fa-star" onclick="pintarEstrellas(5)"></span>
+              </div>
+                <input type="hidden" id="estrellas">
+              <div class="alert-danger col p-1" role="alert" id="error-estrellas" style="display: none;">Seleccione una puntuación</div>
+            </div>
+            
+            <button type="button" id="send" class="btn btn-info my-2" onclick="envioComentario()">Enviar</button>
+          </form>
+          <div class="alert-success col p-1" role="alert" id="ms-success" style="display: none;">Su comentario se envió exitosamente</div>
+        </div>
+      </div>
+    </div>
+    <p id="ejemplo"></p>
+    
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
