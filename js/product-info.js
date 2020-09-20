@@ -4,20 +4,63 @@ var comment = [];
 function showImagesGallery(array){
 
     let htmlContentToAppend = "";
-
-    for(let i = 0; i < array.length; i++){
-        let imageSrc = array[i];
+        let imageSrc = array;
 
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+            <div class="carousel-item active" data-interval="3000">
+                <img src="` + imageSrc[0] + `" class="d-block w-100" alt="...">
             </div>
-        </div>
+            <div class="carousel-item" data-interval="3000">
+                <img src="` + imageSrc[1] + `" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="3000">
+                <img src="` + imageSrc[2] + `" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="3000">
+                <img src="` + imageSrc[3] + `" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="3000">
+                <img src="` + imageSrc[4] + `" class="d-block w-100" alt="...">
+            </div>
         `
-
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
-    }
+    
+}
+
+function showRelatedProducts(array){
+    let htmlContentToAppend = "";
+            let products = array;
+            htmlContentToAppend += `
+            
+                <div class="row row-cols-4">
+                    <div class="col-3 mr-4">
+                        <div class="card" style="width: 18rem;">
+                            <a href="product-info.html" class="list-group-item list-group-item-action">
+                                <img src="` + products[1].imgSrc + `" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title" style="font-weight:bold;">` + products[1].cost + ` ` + products[1].currency + `</h3>
+                                    <h5 class="card-title">` + products[1].name + `</h5>
+                                    <p class="card-text">` + products[1].description + `</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 mr-4">
+                        <div class="card" style="width: 18rem;">
+                            <a href="product-info.html" class="list-group-item list-group-item-action">
+                                <img src="` + products[3].imgSrc + `" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title" style="font-weight:bold;">` + products[3].cost + ` ` + products[3].currency + `</h3>
+                                    <h5 class="card-title">` + products[3].name + `</h5>
+                                    <p class="card-text">` + products[3].description + `</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        `
+        document.getElementById("rProducts").innerHTML = htmlContentToAppend;
+    
 }
 
 function Comentarios(array){
@@ -70,13 +113,11 @@ document.addEventListener("DOMContentLoaded", function(e){
             let categoryDescriptionHTML = document.getElementById("productDescription");
             let productCountHTML = document.getElementById("pCost");
             let productCriteriaHTML = document.getElementById("pSoldCount");
-            let relatedProductsHTML = document.getElementById("relatedP");
         
             categoryNameHTML.innerHTML = product.name;
             categoryDescriptionHTML.innerHTML = product.description;
             productCountHTML.innerHTML = product.cost + " " + product.currency;
             productCriteriaHTML.innerHTML = product.soldCount;
-            relatedProductsHTML.innerHTML = product.relatedProducts;
 
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
@@ -87,6 +128,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         {
             comment = resultObj.data;
             Comentarios(comment);
+        };
+    });
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            products = resultObj.data;
+            showRelatedProducts(products);
         };
     });
 });

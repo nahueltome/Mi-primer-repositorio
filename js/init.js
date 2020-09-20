@@ -40,7 +40,11 @@ var getJSONData = function(url){
     });
 }
 
-document.getElementById("eluser").innerHTML += sessionStorage.getItem('user')
+function cerrarSesion(){
+  sessionStorage.removeItem('user');
+}
+
+document.getElementById("userMenu").innerHTML += sessionStorage.getItem('user')
 
 
 // Si usuario y contraseña están vacíos y estoy en index.html, me redireccione a login.html 
