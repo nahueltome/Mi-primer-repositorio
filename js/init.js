@@ -5,6 +5,7 @@ const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
+const CART_INFO_URL2 = "https://japdevdep.github.io/ecommerce-api/cart/654.json"
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var showSpinner = function(){
@@ -40,17 +41,14 @@ var getJSONData = function(url){
     });
 }
 
+// Función que borra el usuario ingresado
 function cerrarSesion(){
   sessionStorage.removeItem('user');
 }
 
+// Nombre de usuario en el botón desplegable
 document.getElementById("userMenu").innerHTML = sessionStorage.getItem('user')
 
-
-// Si usuario y contraseña están vacíos y estoy en index.html, me redireccione a login.html 
-//if (sessionStorage.getItem('usuario') == null && sessionStorage.getItem('contraseña') == null) {
-//  window.location.replace('index.html');
-//}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

@@ -34,6 +34,8 @@
 </head>
 
 <body>
+
+  <!--  Navbar  -->
   <nav class="navbar navbar-expand-md navbar-light sticky-top py-0" style="background-color: rgba(255, 255, 255, 0.9);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/logo.png" height="50"></a>
@@ -73,63 +75,54 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row my-4">
-      <div id="imagenC" class="col-md-4">
-      </div>
-      <div class="col-md-4">
-        <div class="col ml-3 mb-4" id="nombreC">
-            Nombre: 
-        </div>
-        <div class="col ml-3" id="precioC">
-            Precio: 
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Cantidad</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-          <input type="hidden" id="cantidadC">
-        </div>
-      </div>
+
+  <!-- Form -->
+  <form>
+  <div class="container border border-success" style="background-color: rgb(214, 255, 174);">
+    <div id="Cproductos" class="row my-4">
+
     </div>
     <div class="row mb-2">
-      <div class="col-md-4">
+      <div class="col-4">
+        Moneda:
+      </div>
+      <div class="col-8">
+        Pesos uruguayos <input name="moneda" type="radio" checked onclick="pesos()"><br>
+        Dólares <input name="moneda" type="radio" onclick="dolar()">
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-8">
         Subtotal:
       </div>
-      <div class="col-md-4">
-        
-      </div>
-      <div class="col-md-4">
-        Precio:
+      <div class="col-4 text-right font-weight-bold">
+        <span id="moneda0"> UYU </span><span class="subtotal" type="number" id="subtotal"></span>
       </div>
     </div>
+
     <div class="row mb-2">
-      <div class="col-md-4">
+      <div class="col-4">
         Envio:
       </div>
-      <div class="col-md-4">
-        Tipo:
+      <div class="col-4">
+        No <input name="envio" type="radio" checked onclick="sinEnvio()"><br>
+        Standard (12-15 días) <input name="envio" type="radio" onclick="standard()"><br>
+        Express (5-8 días) <input name="envio" type="radio" onclick="express()"><br>
+        Premium (2-5 días) <input name="envio" type="radio" onclick="premium()"><br>
       </div>
-      <div class="col-md-4">
-        Precio:
+
+      <div class="col-md-4  text-right  font-weight-bold">
+        
+        <span id="moneda1"> UYU </span><span id="envio">0.00</span>
       </div>
     </div>
     <div class="row mb-4">
-      <div class="col-md-4">
+      <div class="col-8">
         Total:
       </div>
-      <div class="col-md-4">
-        
-      </div>
-      <div class="col-md-4">
-        Precio:
+      <div class="col-4  text-right  font-weight-bold">
+        <span id="moneda2"> UYU </span><span id="total"></span>
       </div>
     </div>
     <div class="row mb-2">
@@ -175,6 +168,7 @@
     </div>
 
   </div>
+  </form>
 
   <div id="spinner-wrapper">
     <div class="lds-ring">
