@@ -77,12 +77,14 @@
   </nav>
 
   <!-- Form -->
+
+
   <form>
   <div class="container border border-success" style="background-color: rgb(214, 255, 174);">
     <div id="Cproductos" class="row my-4">
 
     </div>
-    <div class="row mb-2">
+    <div class="row mb-4">
       <div class="col-4">
         Moneda:
       </div>
@@ -91,77 +93,173 @@
         Dólares <input name="moneda" type="radio" onclick="dolar()">
       </div>
     </div>
-
-    <div class="row mb-2">
-      <div class="col-8">
-        Subtotal:
-      </div>
-      <div class="col-4 text-right font-weight-bold">
-        <span id="moneda0"> UYU </span><span class="subtotal" type="number" id="subtotal"></span>
-      </div>
-    </div>
-
-    <div class="row mb-2">
-      <div class="col-4">
-        Envio:
-      </div>
-      <div class="col-4">
-        No <input name="envio" type="radio" checked onclick="sinEnvio()"><br>
-        Standard (12-15 días) <input name="envio" type="radio" onclick="standard()"><br>
-        Express (5-8 días) <input name="envio" type="radio" onclick="express()"><br>
-        Premium (2-5 días) <input name="envio" type="radio" onclick="premium()"><br>
-      </div>
-
-      <div class="col-md-4  text-right  font-weight-bold">
-        
-        <span id="moneda1"> UYU </span><span id="envio">0.00</span>
-      </div>
-    </div>
-    <div class="row mb-4">
-      <div class="col-8">
-        Total:
-      </div>
-      <div class="col-4  text-right  font-weight-bold">
-        <span id="moneda2"> UYU </span><span id="total"></span>
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-4">
-        País:
-      </div>
-      <div class="col-md-4">
-        El país
-      </div>
-      <div class="col-md-4">
-        
-      </div>
-    </div>
+    
     <div class="row mb-4">
       <div class="col-md-4">
-        Dirección:
+        Tipo de envío:
       </div>
       <div class="col-md-4">
-        <div class="col mb-2">
-          Calle:
-        </div>
-        <div class="col mb-2">
-          Número:
-        </div>
-        <div class="col mb-2">
-          Esquina:
-        </div>
-      </div>
-      <div class="col-md-4">
+          <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#staticBackdrop">
+          Con envío
+        </button>
+
+          <!-- Modal con envío-->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Con envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row mb-3">
+                  <div class="col-4">
+                    Método de pago:
+                  </div>
+                  <div class="col-4">
+                    Tarjeta de crédito <input name="pago" type="radio" onclick="tarjetaDeCredito0()"><br>
+                    Transferencia bancaria <input name="pago" type="radio" onclick="transferenciaBancaria0()"><br>
+                  </div>
+                  <div class="col-4">
+            
+                  </div>
+                </div>
+                <!-- Collapse Tarjeta de crédito -->
+                <div id="divCredit0">
+                  
+                </div>
+
+                <!-- Collapse Transferencia bancaria -->
+                <div id="divBank0">
+                  
+                </div>
+                    
+                <div class="row mb-3">
+                  <div class="col-4">
+                    Tipo de envío:
+                  </div>
+                  <div class="col-4" id="envios">
+                    Standard (12-15 días) <input id="envio1" name="envio" type="radio" onclick="standard()"><br>
+                    Express (5-8 días) <input id="envio2" name="envio" type="radio" onclick="express()"><br>
+                    Premium (2-5 días) <input id="envio3" name="envio" type="radio" onclick="premium()"><br>
+                    <div id="hola" style="font-size: medium; color: #dc3545;"></div>
+                  </div>
+                  <div class="col-md-4 text-right font-weight-bold">
         
+                    <span id="moneda1"> UYU </span><span id="envio">0.00</span>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-8">
+                    Total:
+                  </div>
+                  <div class="col-4  text-right  font-weight-bold">
+                    <span id="moneda2"> UYU </span><span id="total"></span>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon6">País</span>
+                      </div>
+                      <input id="3" type="text" class="form-control req" placeholder="Seleccione un país" aria-label="Pais" aria-describedby="basic-addon6">
+                      <div id="4" class="valid-feedback" style="font-size: medium;">
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon7">Calle</span>
+                    </div>
+                    <input type="text" class="form-control req" placeholder="Calle" aria-label="Calle" aria-describedby="basic-addon7">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon8">Número</span>
+                    </div>
+                    <input type="number" class="form-control req" placeholder="Número" aria-label="Número" aria-describedby="basic-addon8">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon9">Esquina</span>
+                    </div>
+                    <input type="text" class="form-control req" placeholder="Esquina" aria-label="Esquina" aria-describedby="basic-addon9">
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success" onclick="validarConEnvio()">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop2" onclick="sinEnvio(); eliminarChecked()">
+          Sin Envío
+        </button>
+
+          <!-- Modal sin envío -->
+        <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Con envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row mb-3">
+                  <div class="col-4">
+                    Método de pago:
+                  </div>
+                  <div class="col-4">
+                    Tarjeta de crédito <input name="pago" type="radio" onclick="tarjetaDeCredito1()"><br>
+                    Transferencia bancaria <input name="pago" type="radio" onclick="transferenciaBancaria1()"><br>
+                  </div>
+                  <div class="col-4">
+            
+                  </div>
+                </div>
+                <!-- Collapse Tarjeta de crédito -->
+                <div id="divCredit1">
+
+                </div>
+                <!-- Collapse Transferencia bancaria -->
+                <div id="divBank1">
+
+                </div>
+                
+                <div class="row mb-4">
+                  <div class="col-8">
+                    Total:
+                  </div>
+                  <div class="col-4  text-right  font-weight-bold">
+                    <span id="moneda3"> UYU </span><span id="total2"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <div class="row mb-4">
-      <div class="col-md-4">
-        
-      </div>
-      <div class="col-md-4">
-        <button type="button" class="btn btn-success">Comprar</button>
-      </div>
+
       <div class="col-md-4">
         
       </div>
