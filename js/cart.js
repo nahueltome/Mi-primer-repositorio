@@ -190,13 +190,15 @@ function eliminarChecked(){
     var envios = `Standard (12-15 días) <input name="envio" type="radio" onclick="standard()"><br>
     Express (5-8 días) <input name="envio" type="radio" onclick="express()"><br>
     Premium (2-5 días) <input name="envio" type="radio" onclick="premium()"><br>
-    <div class="alert-danger" id="errorEnvio">
+    <div id="errorEnvio" style="color: red;">
                       
     </div>`
     document.getElementById("envios").innerHTML = envios;
 }
 
 function tarjetaDeCredito0(){
+    metodoDePago0 = "Tarjeta";
+    document.getElementById("errorPago0").innerHTML = "";
     var collapse = "";
     collapse += `
                 <div class="row mb-3" id="credit0">
@@ -211,32 +213,32 @@ function tarjetaDeCredito0(){
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Nombre del titular</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Nombre del titular" aria-label="Número" aria-describedby="basic-addon1">
-                        </div>
+                            <input id="nombreDelTitular0" type="text" class="form-control" placeholder="Nombre del titular" aria-label="Número" aria-describedby="basic-addon1">
+                        </div><div id="errorNombreDelTitular0" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon2">Número de la tarjeta</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" aria-label="Número" aria-describedby="basic-addon2">
-                        </div>
+                            <input id="numeroTarjeta0" type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" aria-label="Número" aria-describedby="basic-addon2">
+                        </div><div id="errorNumeroTarjeta0" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon3">Fecha de expiración</span>
                             </div> 
-                            <input type="date" class="form-control" aria-label="Número" aria-describedby="basic-addon3">
-                        </div>
+                            <input id="fechaExp0" type="date" class="form-control" aria-label="Número" aria-describedby="basic-addon3">
+                        </div><div id="errorFechaExp0" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon4">Código</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Código" aria-label="Número" aria-describedby="basic-addon4">
-                        </div>
+                            <input id="codigo0" type="text" class="form-control" placeholder="Código" aria-label="Número" aria-describedby="basic-addon4">
+                        </div><div id="errorCodigo0" style="color: red;"></div>
                     </div>
                 </div>
     `
@@ -245,6 +247,8 @@ function tarjetaDeCredito0(){
 }
 
 function transferenciaBancaria0(){
+    metodoDePago0 = "Transferencia";
+    document.getElementById("errorPago0").innerHTML = "";
     var collapse = "";
     collapse += `
                 <div class="row mb-3" id="bank0">
@@ -257,10 +261,18 @@ function transferenciaBancaria0(){
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon5">Número de cuenta</span>
+                                <span class="input-group-text" id="inputCuenta0">Número de cuenta (Cliente)</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Número de cuenta" aria-label="Número" aria-describedby="basic-addon5">
-                        </div>
+                            <input id="cuentaCliente0" type="text" class="form-control" placeholder="Número de cuenta (Cliente)" aria-label="Número" aria-describedby="inputCuenta0">
+                        </div><div id="errorCuentaCliente0" style="color: red;"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputCuenta1">Número de cuenta (Vendedor)</span>
+                            </div> 
+                            <input id="cuentaVendedor0" type="text" class="form-control" placeholder="Número de cuenta (Vendedor)" aria-label="Número" aria-describedby="inputCuenta1">
+                        </div><div id="errorCuentaVendedor0" style="color: red;"></div>
                     </div>
                 </div>
     `
@@ -269,6 +281,8 @@ function transferenciaBancaria0(){
 }
 
 function tarjetaDeCredito1(){
+    metodoDePago1 = "Tarjeta";
+    document.getElementById("errorPago1").innerHTML = "";
     var collapse = "";
     collapse += `
                 <div class="row mb-3" id="credit1">
@@ -283,32 +297,32 @@ function tarjetaDeCredito1(){
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon10">Nombre del titular</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Nombre del titular" aria-label="Número" aria-describedby="basic-addon10">
-                        </div>
+                            <input id="nombreDelTitular1" type="text" class="form-control" placeholder="Nombre del titular" aria-label="Número" aria-describedby="basic-addon10">
+                        </div><div id="errorNombreDelTitular1" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon11">Número de la tarjeta</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" aria-label="Número" aria-describedby="basic-addon11">
-                        </div>
+                            <input id="numeroTarjeta1" type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" aria-label="Número" aria-describedby="basic-addon11">
+                        </div><div id="errorNumeroTarjeta1" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon12">Fecha de expiración</span>
                             </div> 
-                            <input type="date" class="form-control" aria-label="Número" aria-describedby="basic-addon12">
-                        </div>
+                            <input id="fechaExp1" type="date" class="form-control" aria-label="Número" aria-describedby="basic-addon12">
+                        </div><div id="errorFechaExp1" style="color: red;"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon13">Código</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Código" aria-label="Número" aria-describedby="basic-addon13">
-                        </div>
+                            <input id="codigo1" type="text" class="form-control" placeholder="Código" aria-label="Número" aria-describedby="basic-addon13">
+                        </div><div id="errorCodigo1" style="color: red;"></div>
                     </div>
                 </div>
     `
@@ -317,6 +331,8 @@ function tarjetaDeCredito1(){
 }
 
 function transferenciaBancaria1(){
+    metodoDePago1 = "Transferencia";
+    document.getElementById("errorPago1").innerHTML = "";
     var collapse = "";
     collapse += `
                 <div class="row mb-3" id="bank1">
@@ -329,10 +345,18 @@ function transferenciaBancaria1(){
                     <div class="row mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon14">Número de cuenta</span>
+                                <span class="input-group-text" id="inputCuenta2">Número de cuenta (Cliente)</span>
                             </div> 
-                            <input type="text" class="form-control" placeholder="Número de cuenta" aria-label="Número" aria-describedby="basic-addon14">
-                        </div>
+                            <input id="cuentaCliente1" type="text" class="form-control" placeholder="Número de cuenta (Cliente)" aria-label="Número" aria-describedby="inputCuenta2">
+                        </div><div id="errorCuentaCliente1" style="color: red;"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputCuenta3">Número de cuenta (Vendedor)</span>
+                            </div> 
+                            <input id="cuentaVendedor1" type="text" class="form-control" placeholder="Número de cuenta (Vendedor)" aria-label="Número" aria-describedby="inputCuenta3">
+                        </div><div id="errorCuentaVendedor1" style="color: red;"></div>
                     </div>
                 </div>
     `
@@ -340,53 +364,338 @@ function transferenciaBancaria1(){
     document.getElementById("divBank1").innerHTML = collapse;
 }
 
+// Muestro los paises para elegir en un input
+function countries(array){
+    htmlContentToAppend = "";
+    for (let i = 0; i < array.countries.length; i++){
+        let paises = array.countries[i];
+        htmlContentToAppend += `
+            <option id="pais`+paises.id+`" value="`+paises.name+`">`+ paises.name +`</option>
+    
+        `
+        document.getElementById("pais").innerHTML = htmlContentToAppend;
+    }
+    document.getElementById("pais111").setAttribute("selected", "selected"); // Uruguay como default
+}
+
+                    ////////////      Modal Con Envío      ////////////
+
 // Valida los campos si compro con envío
 function validarConEnvio(){
     validarTipoDeEnvio();
     validarCamposDeDireccion();
+    validarMetodoDePago0();
+    if (metodoDePago0 == "Tarjeta"){
+        validarCamposDeTarjetaDeCredito0();
+    }
+    if (metodoDePago0 == "Transferencia"){
+        validarCamposDeTransferencia0();
+    }
+}
+
+var metodoDePago0 = "";
+var CamposDeDireccion0 = false;
+var CamposDePago0 = false;
+var CamposDeEnvio = false;
+
+// Valida los radio buttons de métodos de pago
+function validarMetodoDePago0(){
+    var metodoDePago = document.getElementsByName("pago");
+    var formValid = false;
+    for (let i = 0; i < metodoDePago.length; i++) {
+        if (metodoDePago[i].checked) formValid = true;
+    }
+    if (formValid == false) {
+        document.getElementById("errorMetodoDePago0").innerHTML = "Debe seleccionar un Método de pago";
+    }else{
+        document.getElementById("errorMetodoDePago0").innerHTML = "";
+    }
+}
+
+// Valida los campos de tarjeta de crédito (0)
+function validarCamposDeTarjetaDeCredito0(){
+    var nombre = document.getElementById("nombreDelTitular0").value;
+    var numero = document.getElementById("numeroTarjeta0").value;
+    var fecha = document.getElementById("fechaExp0").value;
+    var codigo = document.getElementById("codigo0").value;
+    if (nombre == "" || nombre == null){
+        document.getElementById("errorNombreDelTitular0").innerHTML = "Debe ingresar el Nombre del titular";
+        document.getElementById("nombreDelTitular0").className = "form-control is-invalid";
+        formValid = true;
+    } else {
+        document.getElementById("errorNombreDelTitular0").innerHTML = "";
+        document.getElementById("nombreDelTitular0").className = "form-control is-valid";
+    }
+    if (numero == "" || numero == null){
+        document.getElementById("errorNumeroTarjeta0").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("numeroTarjeta0").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorNumeroTarjeta0").innerHTML = "";
+        document.getElementById("numeroTarjeta0").className = "form-control is-valid";
+    }
+    if (fecha == "" || fecha == null){
+        document.getElementById("errorFechaExp0").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("fechaExp0").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorFechaExp0").innerHTML = "";
+        document.getElementById("fechaExp0").className = "form-control is-valid";
+    }
+    if (codigo == "" || codigo == null){
+        document.getElementById("errorCodigo0").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("codigo0").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCodigo0").innerHTML = "";
+        document.getElementById("codigo0").className = "form-control is-valid";
+    }
+    if (nombre == "" || nombre == null || numero == "" || numero == null || fecha == "" || fecha == null || codigo == "" || codigo == null){
+        document.getElementById("errorPago0").innerHTML = "Faltan llenar campos de Tarjeta de crédito";
+        CamposDePago0 = false;
+    } else {
+        document.getElementById("errorPago0").innerHTML = "";
+        CamposDePago0 = true;
+    }
+}
+
+// Valida los campos de transferencia (0)
+function validarCamposDeTransferencia0(){
+    var cuentaCliente = document.getElementById("cuentaCliente0").value;
+    var cuentaVendedor = document.getElementById("cuentaVendedor0").value;
+    if (cuentaCliente == "" || cuentaCliente == null){
+        document.getElementById("errorCuentaCliente0").innerHTML = "Debe ingresar el Número de cuenta (Cliente)";
+        document.getElementById("cuentaCliente0").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCuentaCliente0").innerHTML = "";
+        document.getElementById("cuentaCliente0").className = "form-control is-valid";
+    }
+    if (cuentaVendedor == "" || cuentaVendedor == null){
+        document.getElementById("errorCuentaVendedor0").innerHTML = "Debe ingresar el Número de cuenta (Vendedor)";
+        document.getElementById("cuentaVendedor0").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCuentaVendedor0").innerHTML = "";
+        document.getElementById("cuentaVendedor0").className = "form-control is-valid";
+    }
+    if (cuentaCliente == "" || cuentaCliente == null || cuentaVendedor == "" || cuentaVendedor == null){
+        document.getElementById("errorPago0").innerHTML = "Faltan llenar campos de Transferencia bancaria";
+        CamposDePago0 = false;
+    } else {
+        document.getElementById("errorPago0").innerHTML = "";
+        CamposDePago0 = true;
+    }
 }
 
 // Valida los radio buttons de tipo de envío
 function validarTipoDeEnvio(){
     var tipoEnvio = document.getElementsByName("envio");
     var formValid = false;
-
-    
     for (let i = 0; i < tipoEnvio.length; i++) {
         if (tipoEnvio[i].checked) formValid = true;
-        
     }
     if (formValid == false) {
-        document.getElementById("hola").innerHTML = "Debe seleccionar un tipo de envío";
-        return false;
-    }else{
-        document.getElementById("hola").innerHTML = "";
-        return true;
+        document.getElementById("errorEnvio").innerHTML = "Debe seleccionar un tipo de envío";
+    } else {
+        document.getElementById("errorEnvio").innerHTML = "";
+        CamposDeEnvio = true;
     }
 }
 
 // Valida los campos de direccion 
 function validarCamposDeDireccion(){
-    var addrElem = document.getElementsByClassName("req");
-    var formValid = true;
-    for(var i = 0; i < addrElem.length; i++){
-        formValid = formValid && addrElem[i].value != "";
+    var calle = document.getElementById("calle").value;
+    var numero = document.getElementById("numeroCasa").value;
+    var esquina = document.getElementById("esquina").value;
+    document.getElementById("pais").className = "custom-select is-valid"
+    if (calle == "" || calle == null){
+        document.getElementById("errorCalle").innerHTML = "Debe ingresar una Calle";
+        document.getElementById("calle").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCalle").innerHTML = "";
+        document.getElementById("calle").className = "form-control is-valid";
     }
-    if(formValid == false){
-        document.getElementById("3").className = "form-control req is-invalid";
-        document.getElementById("4").innerHTML = "Looks bad!";
-        document.getElementById("4").className = "invalid-feedback";
-        return false;
-    }else{
-        document.getElementById("3").className = "form-control req is-valid";
-        document.getElementById("4").innerHTML = "Looks good!";
-        document.getElementById("4").className = "valid-feedback";
-        return true;
+    if (numero == "" || numero == null){
+        document.getElementById("errorNumeroCasa").innerHTML = "Debe ingresar un Número";
+        document.getElementById("numeroCasa").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorNumeroCasa").innerHTML = "";
+        document.getElementById("numeroCasa").className = "form-control is-valid";
+    }
+    if (esquina == "" || esquina == null){
+        document.getElementById("errorEsquina").innerHTML = "Debe ingresar una Esquina";
+        document.getElementById("esquina").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorEsquina").innerHTML = "";
+        document.getElementById("esquina").className = "form-control is-valid";
+    }
+    if (calle == "" || calle == null || numero == "" || numero == null || esquina == "" || esquina == null) {
+        CamposDeDireccion0 = false;
+    } else {
+        CamposDeDireccion0 = true;
     }
 }
 
-function validarMetodoDePago(){
-    
+// Vuelve al inicio 
+function volverAlInicio(){
+    return location.href = "home.html";
+}
+
+// Mensaje de éxito al finalizar la compra
+function mensajeDeExito0(){
+    getJSONData(CART_BUY_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            mensaje = resultObj.data;
+
+            if (CamposDeDireccion0 == true && CamposDePago0 == true && CamposDeEnvio == true){
+                var htmlContentToAppend = "";
+                htmlContentToAppend += `
+        
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel" style="color: green">¡Gracias!</h5>
+                            </div>
+                            <div class="modal-body font-weight-bold" style="color: green">
+                                `+ mensaje.msg +`
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="volverAlInicio()">Volver al inicio</button>
+                            </div>
+                        </div>
+                    </div>
+                `
+                document.getElementById("staticBackdrop").innerHTML = htmlContentToAppend;
+            }
+        };
+    });
+}
+
+                    ////////////      Modal Sin Envío      ////////////
+
+// Valida los campos si compro sin envío
+function validarSinEnvio(){
+    validarMetodoDePago1();
+    if (metodoDePago1 == "Tarjeta"){
+        validarCamposDeTarjetaDeCredito1();
+    }
+    if (metodoDePago1 == "Transferencia"){
+        validarCamposDeTransferencia1();
+    }
+}
+
+var metodoDePago1 = "";
+var CamposDePago1 = false;
+
+// Valida los radio buttons de métodos de pago
+function validarMetodoDePago1(){
+    var metodoDePago = document.getElementsByName("pago1");
+    var formValid = false;
+    for (let i = 0; i < metodoDePago.length; i++) {
+        if (metodoDePago[i].checked) formValid = true;
+    }
+    if (formValid == false) {
+        document.getElementById("errorMetodoDePago1").innerHTML = "Debe seleccionar un Método de pago";
+    }else{
+        document.getElementById("errorMetodoDePago1").innerHTML = "";
+    }
+}
+
+// Valida los campos de tarjeta de crédito (1)
+function validarCamposDeTarjetaDeCredito1(){
+    var nombre = document.getElementById("nombreDelTitular1").value;
+    var numero = document.getElementById("numeroTarjeta1").value;
+    var fecha = document.getElementById("fechaExp1").value;
+    var codigo = document.getElementById("codigo1").value;
+    if (nombre == "" || nombre == null){
+        document.getElementById("errorNombreDelTitular1").innerHTML = "Debe ingresar el Nombre del titular";
+        document.getElementById("nombreDelTitular1").className = "form-control is-invalid";
+        formValid = true;
+    } else {
+        document.getElementById("errorNombreDelTitular1").innerHTML = "";
+        document.getElementById("nombreDelTitular1").className = "form-control is-valid";
+    }
+    if (numero == "" || numero == null){
+        document.getElementById("errorNumeroTarjeta1").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("numeroTarjeta1").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorNumeroTarjeta1").innerHTML = "";
+        document.getElementById("numeroTarjeta1").className = "form-control is-valid";
+    }
+    if (fecha == "" || fecha == null){
+        document.getElementById("errorFechaExp1").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("fechaExp1").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorFechaExp1").innerHTML = "";
+        document.getElementById("fechaExp1").className = "form-control is-valid";
+    }
+    if (codigo == "" || codigo == null){
+        document.getElementById("errorCodigo1").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("codigo1").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCodigo1").innerHTML = "";
+        document.getElementById("codigo1").className = "form-control is-valid";
+    }
+    if (nombre == "" || nombre == null || numero == "" || numero == null || fecha == "" || fecha == null || codigo == "" || codigo == null){
+        document.getElementById("errorPago1").innerHTML = "Faltan llenar campos de Tarjeta de crédito";
+        CamposDePago1 = false;
+    } else {
+        document.getElementById("errorPago1").innerHTML = "";
+        CamposDePago1 = true;
+    }
+}
+
+// Valida los campos de transferencia (1)
+function validarCamposDeTransferencia1(){
+    var cuentaCliente = document.getElementById("cuentaCliente1").value;
+    var cuentaVendedor = document.getElementById("cuentaVendedor1").value;
+    if (cuentaCliente == "" || cuentaCliente == null){
+        document.getElementById("errorCuentaCliente1").innerHTML = "Debe ingresar el Número de cuenta (Cliente)";
+        document.getElementById("cuentaCliente1").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCuentaCliente1").innerHTML = "";
+        document.getElementById("cuentaCliente1").className = "form-control is-valid";
+    }
+    if (cuentaVendedor == "" || cuentaVendedor == null){
+        document.getElementById("errorCuentaVendedor1").innerHTML = "Debe ingresar el Número de cuenta (Vendedor)";
+        document.getElementById("cuentaVendedor1").className = "form-control is-invalid";
+    } else {
+        document.getElementById("errorCuentaVendedor1").innerHTML = "";
+        document.getElementById("cuentaVendedor1").className = "form-control is-valid";
+    }
+    if (cuentaCliente == "" || cuentaCliente == null || cuentaVendedor == "" || cuentaVendedor == null){
+        document.getElementById("errorPago1").innerHTML = "Faltan llenar campos de Transferencia bancaria";
+        CamposDePago1 = false;
+    } else {
+        document.getElementById("errorPago1").innerHTML = "";
+        CamposDePago1 = true;
+    }
+}
+
+// Mensaje de éxito al finalizar la compra
+function mensajeDeExito1(){
+    getJSONData(CART_BUY_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            mensaje = resultObj.data;
+
+            if (CamposDePago1 == true){
+                var htmlContentToAppend = "";
+                htmlContentToAppend += `
+        
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel" style="color: green">¡Gracias!</h5>
+                            </div>
+                            <div class="modal-body font-weight-bold" style="color: green">
+                                `+ mensaje.msg +`
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="volverAlInicio()">Volver al inicio</button>
+                            </div>
+                        </div>
+                    </div>
+                `
+                document.getElementById("staticBackdrop1").innerHTML = htmlContentToAppend;
+            }
+        };
+    });
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -401,6 +710,13 @@ document.addEventListener("DOMContentLoaded", function(e){
             sub0(document.getElementById("count0").value);
             sub1(document.getElementById("count1").value);
             subtotal();
+        };
+    });
+    getJSONData(PAISES).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            paises = resultObj.data;
+            countries(paises);
         };
     });
 });
