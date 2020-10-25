@@ -434,14 +434,14 @@ function validarCamposDeTarjetaDeCredito0(){
         document.getElementById("numeroTarjeta0").className = "form-control is-valid";
     }
     if (fecha == "" || fecha == null){
-        document.getElementById("errorFechaExp0").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("errorFechaExp0").innerHTML = "Debe ingresar la Fecha de expiración";
         document.getElementById("fechaExp0").className = "form-control is-invalid";
     } else {
         document.getElementById("errorFechaExp0").innerHTML = "";
         document.getElementById("fechaExp0").className = "form-control is-valid";
     }
     if (codigo == "" || codigo == null){
-        document.getElementById("errorCodigo0").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("errorCodigo0").innerHTML = "Debe ingresar el Código de la tarjeta";
         document.getElementById("codigo0").className = "form-control is-invalid";
     } else {
         document.getElementById("errorCodigo0").innerHTML = "";
@@ -619,14 +619,14 @@ function validarCamposDeTarjetaDeCredito1(){
         document.getElementById("numeroTarjeta1").className = "form-control is-valid";
     }
     if (fecha == "" || fecha == null){
-        document.getElementById("errorFechaExp1").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("errorFechaExp1").innerHTML = "Debe ingresar la Fecha de expiración";
         document.getElementById("fechaExp1").className = "form-control is-invalid";
     } else {
         document.getElementById("errorFechaExp1").innerHTML = "";
         document.getElementById("fechaExp1").className = "form-control is-valid";
     }
     if (codigo == "" || codigo == null){
-        document.getElementById("errorCodigo1").innerHTML = "Debe ingresar el Número de la tarjeta";
+        document.getElementById("errorCodigo1").innerHTML = "Debe ingresar el Código de la tarjeta";
         document.getElementById("codigo1").className = "form-control is-invalid";
     } else {
         document.getElementById("errorCodigo1").innerHTML = "";
