@@ -41,7 +41,7 @@ document.getElementById("fotoPerfil").addEventListener("change", function(){
 
     reader.addEventListener("load", () => {
         localStorage.setItem("profilePhoto", reader.result);
-        
+         
     });
 
     reader.readAsDataURL(this.files[0]);
