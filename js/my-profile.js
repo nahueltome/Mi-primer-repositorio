@@ -7,12 +7,14 @@ var datos = {
 }
 
 var datosParse = JSON.parse(localStorage.getItem("datos")); 
+if (datosParse) {
+    document.getElementById("userNombre").value = datosParse.Nombre;
+    document.getElementById("userApellido").value = datosParse.Apellido;
+    document.getElementById("userEdad").value = datosParse.Edad;
+    document.getElementById("userEmail").value = datosParse.Email;
+    document.getElementById("userTelefono").value = datosParse.Telefono;
+}
 
-document.getElementById("userNombre").value = datosParse.Nombre;
-document.getElementById("userApellido").value = datosParse.Apellido;
-document.getElementById("userEdad").value = datosParse.Edad;
-document.getElementById("userEmail").value = datosParse.Email;
-document.getElementById("userTelefono").value = datosParse.Telefono;
 
 var mensaje = document.getElementById("saveAlert");
 var mensajeImagen = document.getElementById("imageAlert");
