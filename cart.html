@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 
 
   <form id="cartForm">
-  <div class="container border border-success" style="background-color: rgb(214, 255, 174);">
+  <div class="container border border-success mt-4">
     <div id="Cproductos" class="row my-4">
 
     </div>
@@ -100,7 +101,7 @@
       </div>
       <div class="col-md-4">
           <!-- Button trigger modal -->
-        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#staticBackdrop">
+        <button type="button" class="btn btn-success mr-4" data-toggle="modal" data-target="#staticBackdrop">
           Con envío
         </button>
 
@@ -217,7 +218,7 @@
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Con envío</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Sin envío</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -249,7 +250,7 @@
                   <div class="col-8">
                     Total:
                   </div>
-                  <div class="col-4  text-right  font-weight-bold">
+                  <div class="col-4 text-right font-weight-bold">
                     <span id="moneda3"> UYU </span><span id="total2"></span>
                   </div>
                 </div>

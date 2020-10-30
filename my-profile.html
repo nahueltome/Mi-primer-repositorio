@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title>eMercado - Mi perfil</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -31,9 +31,11 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
 </head>
 
 <body>
+  <!--  Navbar  -->
   <nav class="navbar navbar-expand-md navbar-light sticky-top py-0" style="background-color: rgba(255, 255, 255, 0.9);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/logo.png" height="50"></a>
@@ -73,26 +75,78 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container border mt-4">
+    <div class="text-center my-4">
+      <h2>Mi perfil</h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="ariaNombre">Nombre</span>
+          </div>
+          <input id="userNombre" type="text" class="form-control" placeholder="Nombre" aria-label="ariaNombre" aria-describedby="ariaNombre">
+        </div>
+      </div>
+      <div class="col-sm-6 mb-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="ariaApellido">Apellido</span>
+          </div>
+          <input id="userApellido" type="text" class="form-control" placeholder="Apellido" aria-label="ariaApellido" aria-describedby="ariaApellido">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="ariaEdad">Edad</span>
+          </div>
+          <input id="userEdad" type="text" class="form-control" placeholder="Edad" aria-label="ariaEdad" aria-describedby="ariaEdad">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="ariaEmail">Email</span>
+          </div>
+          <input id="userEmail" type="text" class="form-control" placeholder="Email" aria-label="ariaEmail" aria-describedby="ariaEmail">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="ariaTelefono">Teléfono</span>
+          </div>
+          <input id="userTelefono" type="text" class="form-control" placeholder="Teléfono" aria-label="ariaTelefono" aria-describedby="ariaTelefono">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <h5>Foto de perfil</h5>
+        <div class="custom-file mt-2">
+          <input type="file" class="custom-file-input" id="fotoPerfil">
+          <label class="custom-file-label" for="fotoPerfil" data-browse="Buscar imagen">Elija una imagen</label>
+        </div>
+        <div class="my-4 font-weight-bold" id="imageAlert"></div>
+        <img class="rounded mt-4" src="" alt="fotoPerfil" id="mostrarFoto">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 my-4">
+        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
+      </div>
+      <div class="col-sm-6 my-4 text-center font-weight-bold" id="saveAlert"></div>
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
