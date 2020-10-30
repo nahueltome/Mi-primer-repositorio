@@ -7,6 +7,7 @@ var datos = {
 }
 
 var datosParse = JSON.parse(localStorage.getItem("datos")); 
+
 if (datosParse) {
     document.getElementById("userNombre").value = datosParse.Nombre;
     document.getElementById("userApellido").value = datosParse.Apellido;
@@ -57,6 +58,8 @@ document.getElementById("fotoPerfil").addEventListener("change", function(){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+    localStorage.removeItem("datos");
+    localStorage.removeItem("profilePhoto");
     if (recentImageDataUrl) {
         document.getElementById("mostrarFoto").setAttribute("src", recentImageDataUrl);
         document.getElementById("mostrarFoto").style.display = "block";
