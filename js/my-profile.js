@@ -8,6 +8,7 @@ var datos = {
 
 var datosParse = JSON.parse(localStorage.getItem("datos")); 
 
+// Si ya hay datos guardados en localStorage muestro esos valores
 if (datosParse) {
     document.getElementById("userNombre").value = datosParse.Nombre;
     document.getElementById("userApellido").value = datosParse.Apellido;
@@ -15,7 +16,6 @@ if (datosParse) {
     document.getElementById("userEmail").value = datosParse.Email;
     document.getElementById("userTelefono").value = datosParse.Telefono;
 }
-
 
 var mensaje = document.getElementById("saveAlert");
 var mensajeImagen = document.getElementById("imageAlert");
@@ -34,17 +34,19 @@ function guardarCambios() {
             mensaje.style.display = "none";
         }, 3000);     // Después de 3 segundos oculta el mensaje de éxito
 }
+
 const recentImageDataUrl = localStorage.getItem("profilePhoto");
 
+// Función que se ejecuta una vez se haya cambiado el archivo seleccionado
 document.getElementById("fotoPerfil").addEventListener("change", function(){
-    const reader = new FileReader();
+    const reader = new FileReader();        // Lee el archivo que vamos a subir
 
     reader.addEventListener("load", () => {
-        localStorage.setItem("profilePhoto", reader.result);
-         
+        localStorage.setItem("profilePhoto", reader.result);    // Carga la imagen en local storage
     });
 
     reader.readAsDataURL(this.files[0]);
+
     mensajeImagen.innerHTML = "Cargando imagen...";
     mensajeImagen.style.display = "block";
     setTimeout(() => {
